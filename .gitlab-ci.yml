@@ -7,9 +7,11 @@ variables:
 cache:
   paths:
     - .m2/repository/
-    - target/
 
 build:
   stage: build
   script:
     - mvn package
+  artifacts:
+    paths:
+      - target/*.jar
